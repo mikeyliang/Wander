@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from 'react-native';
 
 import Logo from '../assets/icons/logo.svg'
 
-export default function Home() {
+export default function Start() {
     return (
         <View className="h-full bg-white py-[100px]">
             <View className="flex flex-row justify-center items-end w-full my-16">
@@ -14,7 +14,7 @@ export default function Home() {
                 <Text className="text-[40px] w-4/5 text-center">SloganSloganSloganSloganSl</Text>
             </View>
             <View className="mt-[40px] w-full h-[130px] items-center">
-                <Text className="text-[16px] w-4/5 text-center">SloganSloganSloganSloganSl</Text>
+                <Text className="text-[16px] w-4/5 text-center">SloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSloganSlogan</Text>
             </View>
             <View className="mt-[90px] w-full h-[50px]
             items-center">

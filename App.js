@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Welcome from './screens/Welcome'
 import Nav from './components/Nav'
 
-import Home from './screens/Home.jsx'
+import Start from './screens/Start.jsx'
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +16,7 @@ export default function App() {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="yes" component={Start} />
       </Stack.Navigator>
     </NavigationContainer>
   );
