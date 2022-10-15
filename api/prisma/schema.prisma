@@ -16,6 +16,7 @@ model dm_College {
   city String
   state String
   user User[]
+  trail Trails[]
 
 }
 
@@ -24,19 +25,25 @@ model Trails {
   longitude Float[]
   latitute Float[]
   elevation Float[]
+  collegeid String @db.Uuid
+  college dm_College @relation(fields: [collegeid], references: [id])
 }
 
 model User {
   id String @id @default(uuid()) @db.Uuid
   name String
   email String
-  collegeId String
-  college dm_College @relation(fields: [collegeId], references: [id])
+  collegeid String @db.Uuid
+  college dm_College @relation(fields: [collegeid], references: [id])
+  challenges Challenge[] 
 }
 
 model Challenge {
   id String @id @default(uuid()) @db.Uuid
-
+  dm_challengeid String
+  userid String @db.Uuid
+  user User @relation(fields: [userid], references: [id])
+  createdAt DateTime @default(now()) @db.Timestamptz(6)
 }
 
 model dm_Challenge {
@@ -44,6 +51,7 @@ model dm_Challenge {
   challengename String
   description String
   createdAt DateTime @default(now()) @db.Timestamptz(6)
+  collegeId String @db.Uuid
 }
 
 
