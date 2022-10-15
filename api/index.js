@@ -18,22 +18,54 @@ app.get('/', (request, response) => {
 
 
 app.get(
-    "/trails", async (req, res) => {
-        try {
-            const trails = await prisma.trail.findMany()
-            res.json(trails)
-        } catch (error) {
-            res.status(500).json({
-                message: "Error on retrieving trail data."
-            })
+    "/trail", async (req, res) => {
+
+        if (req.query.collegeid) {
+            try {
+                const trails = await prisma.trail.findMany({
+                    where: {
+                        collegeid: req.query.collegeid
+                    },
+                    include: {
+                        trailposition: true
+                    }
+                })
+                res.json(trails)
+            } catch (error) {
+                res.status(500).json({
+                    message: error
+                })
+            }
+        } else if (req.query.trailid) {
+            try {
+                const trails = await prisma.trail.findUnique({
+                    where: {
+                        id: req.query.trailid
+                    },
+                    include: {
+                        trailposition: true,
+                    }
+                })
+                
+               
+                res.json(trails)
+            } catch (error) {
+                res.status(500).json({
+                    message: "Error on retrieving unique trail data."
+                })
+            }
+
         }
-    }
-)
+
+    })
+
 
 app.get(
     "/college", async (req, res) => {
         try {
-            const college= await prisma.dm_College.findMany()
+            const college= await prisma.dm_College.findMany(
+
+            )
             res.json(college)
         } catch (error) {
             res.status(500).json({
