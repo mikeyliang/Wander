@@ -28,7 +28,7 @@ model Trail {
   college dm_College @relation(fields: [collegeid], references: [id])
   image String?
   distance Float
-  maxElevation Float
+  elevationChange Float
   difficulty Int // 1-Easy, 2-Medium, 3-Hard, 4-Expert
 }
 
