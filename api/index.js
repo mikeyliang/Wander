@@ -64,7 +64,6 @@ app.get(
     "/college", async (req, res) => {
         try {
             const college= await prisma.dm_College.findMany(
-
             )
             res.json(college)
         } catch (error) {

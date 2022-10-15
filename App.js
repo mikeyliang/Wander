@@ -14,15 +14,6 @@ import { useFonts } from 'expo-font';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-
-  const [loadedFonts] = useFonts({
-    'Inter-Black': require('./assets/fonts/Inter-Black.ttf'),
-    'Inter-Bold': require('./assets/fonts/Inter-Bold.ttf'),
-    'Inter-ExtraBold': require('./assets/fonts/Inter-ExtraBold.ttf'),
-    'Inter-Medium': require('./assets/fonts/Inter-Medium.ttf'),
-    'Inter-SemiBold': require('./assets/fonts/Inter-SemiBold.ttf'),
-  })
-
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{
