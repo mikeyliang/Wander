@@ -17,8 +17,6 @@ cursor = conn.cursor()
 # for i in files:
 #     data = pd.read_csv(i)
 
-files = files[20:]
-
 for i in files:
     data = pd.read_csv(i)
 
