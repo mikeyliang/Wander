@@ -6,13 +6,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Welcome from './screens/Welcome'
 import Nav from './components/Nav'
 
+import Start from './screens/Start.jsx'
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Navigator screenOptions={{
+        headerShown: false
+      }}>
+        <Stack.Screen name="yes" component={Start} />
       </Stack.Navigator>
     </NavigationContainer>
   );
