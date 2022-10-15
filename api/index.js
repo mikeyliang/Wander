@@ -3,6 +3,8 @@ import bodyParser from 'body-parser'
 const app = express()
 const port = 3000
 
+import prisma from "./lib/prisma.js"
+
 app.use(bodyParser.json())
 app.use(
   bodyParser.urlencoded({
@@ -18,7 +20,7 @@ app.get('/', (request, response) => {
 app.get(
     "/trails", async (req, res) => {
         try {
-            const trails = await prisma.trails.findMany()
+            const trails = await prisma.trail.findMany()
             res.json(trails)
         } catch (error) {
             res.status(500).json({
@@ -31,11 +33,11 @@ app.get(
 app.get(
     "/college", async (req, res) => {
         try {
-            const trails = await prisma.dm_College.findMany()
-            res.json(trails)
+            const college= await prisma.dm_College.findMany()
+            res.json(college)
         } catch (error) {
             res.status(500).json({
-                message: "Error on retrieving trail data."
+                message: "Error on retrieving college data."
             })
         }
     }
