@@ -17,6 +17,8 @@ cursor = conn.cursor()
 # for i in files:
 #     data = pd.read_csv(i)
 
+files = files[20:]
+
 for i in files:
     data = pd.read_csv(i)
 
@@ -64,7 +66,7 @@ for i in files:
     dist = dist*6.213712e-4
     deltaele = deltaele * 3.28083993602
 
-    cursor.execute(f"""INSERT INTO "Trail" ("id", "name", "collegeid", "image", "distance", "elevationChange", "difficulty") VALUES (gen_random_uuid(), '{i.split('/')[-1].split('.')[0]}', (SELECT id from "dm_College" where name = 'Cornell University'), null, {round(dist, 2)}, {round(deltaele, 2)}, {counter})  """)
+    cursor.execute(f"""INSERT INTO "Trail" ("id", "name", "collegeid", "image", "distance", "elevationChange", "difficulty") VALUES (gen_random_uuid(), '{i.split('/')[-1].split('.')[0].replace("'", "''")}', (SELECT id from "dm_College" where name = 'Cornell University'), null, {round(dist, 2)}, {round(deltaele, 2)}, {counter})  """)
     conn.commit()
 
 
