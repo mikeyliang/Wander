@@ -16,17 +16,25 @@ model dm_College {
   city String
   state String
   user User[]
-  trail Trails[]
+  trail Trail[]
 
 }
 
-model Trails {
+model Trail {
+  id String @id @default(uuid()) @db.Uuid
+  trailposition TrailPosition[]
+  collegeid String @db.Uuid
+  college dm_College @relation(fields: [collegeid], references: [id])
+}
+
+model TrailPosition {
   id String @id @default(uuid()) @db.Uuid
   longitude Float[]
   latitute Float[]
   elevation Float[]
-  collegeid String @db.Uuid
-  college dm_College @relation(fields: [collegeid], references: [id])
+  trailid String @db.Uuid
+  trail Trail @relation(fields: [trailid], references: [id])
+
 }
 
 model User {
