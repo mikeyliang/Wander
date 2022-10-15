@@ -19,16 +19,15 @@ export default function Start() {
             <View className="mt-[90px] w-full h-[50px]
             items-center">
                 <View className="h-full w-10/12 bg-white items-center">
-                    <TouchableOpacity className="items-center bg-lime-600 w-full mx-8 py-[16px] rounded-2xl">
+                    <TouchableOpacity className="items-center bg-[#3d7847] w-full mx-8 py-[16px] rounded-2xl">
                         <Text className="text-center w-full h-full font-bold text-white">Explore Now</Text>
                     </TouchableOpacity>
                 </View>
             </View>
-            <View className="mt-[15px] w-full h-[50px]
-            items-center">
+            <View className="mt-[15px] w-full h-[50px] items-center">
                 <View className="h-full w-10/12 bg-white items-center">
-                    <TouchableOpacity className="items-center align-middle bg-lime-500 w-full mx-8 py-[16px] rounded-2xl">
-                        <Text className="text-center w-full h-full font-bold">Login</Text>
+                    <TouchableOpacity className="flex flex-col justify-center items-center border-2 border-[#3d7847] w-full mx-8 rounded-2xl h-full">
+                        <Text className="text-center w-full font-bold">Create Account</Text>
                     </TouchableOpacity>
                 </View>
             </View>
