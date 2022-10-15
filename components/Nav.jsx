@@ -1,12 +1,14 @@
 import { StyleSheet, Text, View } from 'react-native';
-import FontAwesomeIcon from 'react-native-fontawesome';
+
+
+import SVG from '../assets/icons/logo.svg';
 
 export default function Nav() {
     
     return (
         <View className="absolute">
             <Text>Hiii</Text>
-            <FontAwesomeIcon icon="mug-saucer" />
+            <SVG />
         </View>
     )
 }
