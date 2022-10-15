@@ -22,16 +22,18 @@ model dm_College {
 
 model Trail {
   id String @id @default(uuid()) @db.Uuid
+  name String @unique
   trailposition TrailPosition[]
   collegeid String @db.Uuid
   college dm_College @relation(fields: [collegeid], references: [id])
+  image String?
 }
 
 model TrailPosition {
   id String @id @default(uuid()) @db.Uuid
   position Int
   longitude Float
-  latitute Float
+  latitude Float
   elevation Float
   trailid String @db.Uuid
   trail Trail @relation(fields: [trailid], references: [id])
