@@ -1,12 +1,9 @@
 import prisma from "./lib/prisma.js"
 
-const trails = await prisma.trail.findMany({
+const user = await prisma.user.findUnique({
     where: {
-        collegeid: "ef8f0795-9036-4301-b56f-48995494fcfe"
-    },
-    include: {
-        trailposition: true
+        email: 'ml2226@cornell.edu'
     }
 })
 
-console.log(trails)
+console.log(user)

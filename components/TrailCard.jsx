@@ -1,13 +1,14 @@
-import { View, Text, Image } from "react-native"
+import { View, Text, Image, TouchableOpacity } from "react-native"
 
 import MapIcon from '../assets/icons/map-pin.svg'
 
 import HeightIcon from '../assets/icons/line-height.svg'
+import RouteIcon from '../assets/icons/route.svg'
 
 export default function TrailCard() {
 
     return (
-        <View className="flex flex-col bg-white shadow-md p-6 w-[260px] justify-center items-center rounded-[30px]">
+        <TouchableOpacity className="flex flex-col bg-white shadow-md p-6 w-[260px] justify-center items-center rounded-[30px] h-[350px] m-2">
 
             <View>
                 <View className="absolute bottom-4 right-4 z-10 p-2 rounded-xl bg-green-400/95">
@@ -26,15 +27,15 @@ export default function TrailCard() {
 
 
                     <View className="flex flex-row justify-center items-center px-3 p-2 rounded-full bg-gray-100">
-
-                        <Text className="font-semibold">2.34 miles</Text>
+                        <RouteIcon height={15} width={15}></RouteIcon>
+                        <Text className="font-semibold ml-1">2.34 miles</Text>
 
                     </View>
 
                     <View className="flex flex-row justify-center items-center p-2 rounded-full bg-gray-100">
 
                         <HeightIcon height={15} width={25}></HeightIcon>
-                        <Text className="font-semibold">319 feet</Text>
+                        <Text className="font-semibold ml-1">319 feet</Text>
 
                     </View>
 
@@ -47,7 +48,7 @@ export default function TrailCard() {
             </View>
 
 
-        </View>
+        </TouchableOpacity>
     )
 
 }
