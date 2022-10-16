@@ -59,7 +59,7 @@ export default function Profile({navigation}) {
                         <View className="flex flex-row gap-4 justify-center items-center">
                             <Text className="text-2xl font-black">5</Text>
                             <View className="flex flex-row justify-center items-center p-2 bg-green-200 rounded-2xl">
-                                <ArrowUp width={15} height={15} /> 
+                                <ArrowUp width={15} height={15} style={{color: '#000000'}}/> 
                                 <Text className="ml-1 mr-1 font-semibold">1</Text>
                             </View>
                         </View>
@@ -69,7 +69,7 @@ export default function Profile({navigation}) {
                         <View className="flex flex-row gap-4 justify-center items-center">
                             <Text className="text-2xl font-black">2</Text>
                             <View className="flex flex-row justify-center items-center p-2 bg-red-200 rounded-2xl">
-                                <ArrowDown width={15} height={15} /> 
+                                <ArrowDown width={15} height={15} style={{color: '#000000'}}/> 
                                 <Text className="ml-1 mr-1 font-semibold">2</Text>
                             </View>
                         </View>
@@ -80,7 +80,7 @@ export default function Profile({navigation}) {
                     <View className="flex flex-row justify-center items-center gap-4 rounded-2xl">
                         <View className="flex flex-row justify-center items-center p-4 bg-white shadow-sm rounded-2xl">
                         <View className="flex flex-row justify-center items-center p-2 bg-green-200 rounded-2xl">
-                                <ArrowUp width={15} height={15} /> 
+                                <ArrowUp width={15} height={15} style={{color: '#000000'}}/> 
                                 <Text className="ml-1 mr-1 font-semibold">3</Text>
                             </View>
                             <Text className="ml-2 font-extrabold">in Cornell University</Text>
@@ -94,7 +94,7 @@ export default function Profile({navigation}) {
                         <Image style={{width: 25, height: 25, marginRight: 10}}source={require('../assets/icons/CU.png')}></Image>
                         <Text className="mr-2 font-extrabold">Cornell University</Text>
                         <View className="flex flex-row justify-center items-center p-2 bg-green-200 rounded-2xl">
-                            <ArrowUp width={15} height={15} /> 
+                            <ArrowUp width={15} height={15} style={{color: '#000000'}}/> 
                             <Text className="ml-1 mr-1 font-semibold">1</Text>
                         </View>
                             

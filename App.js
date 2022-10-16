@@ -3,13 +3,13 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Welcome from './screens/Welcome'
-import Nav from './components/Nav'
 import Home from './pages/Home';
 import Start from './screens/Start.jsx'
 import Login from './screens/Login.jsx'
 import { useFonts } from 'expo-font';
 import Profile from './pages/Profile'
+
+import Map from './pages/Map.jsx'
 
 const Stack = createNativeStackNavigator();
 
@@ -31,6 +31,7 @@ export default function App() {
         <Stack.Screen name="Start" component={Start} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Map" component={Map} />
         <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>

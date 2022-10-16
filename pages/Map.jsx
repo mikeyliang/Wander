@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, PROVIDER_GOOGLE } from "react-native";
 import MapView, { AnimatedRegion } from 'react-native-maps';
 import MapViewDirections from "react-native-maps-directions";
 
+import Nav from "../components/Nav";
 
 const LOCATION_TASK_NAME = "LOCATION_TASK_NAME"
 let foregroundSubscription = null
@@ -70,6 +71,7 @@ coordinate.forEach(function(c) {c.slice(0,-1).map((item, index) => {
    
   return(
     <View style={styles.container}>
+        <Nav section={'Map'} navigation={navigation}/>
         <MapView style={{height: '100%', width:'100%'}} initialRegion={{
             latitude: 42.4440,
             longitude: -76.5019,
