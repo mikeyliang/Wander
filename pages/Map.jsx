@@ -3,12 +3,13 @@ import { StyleSheet, View, Text, PROVIDER_GOOGLE } from "react-native";
 import MapView, { AnimatedRegion } from 'react-native-maps';
 import MapViewDirections from "react-native-maps-directions";
 
+import Nav from "../components/Nav";
 
 const LOCATION_TASK_NAME = "LOCATION_TASK_NAME"
 let foregroundSubscription = null
 
 
-export default function Map() {
+export default function Map({navigation}) {
   
   const [coordinate, setCoordinate] = useState([])
 
@@ -67,6 +68,7 @@ useEffect(() => {
    
   return(
     <View style={styles.container}>
+        <Nav section={'Map'} navigation={navigation}/>
         <MapView style={{height: '100%', width:'100%'}} initialRegion={{
             latitude: 42.4440,
             longitude: -76.5019,

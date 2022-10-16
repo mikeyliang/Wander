@@ -16,7 +16,7 @@ export default function Nav(props) {
                     <Text className={`font-[Inter-Bold] text-xs text-gray-500 ${props.section === 'Home' ? 'text-green-600' : ''}`}>Home</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity className={`flex flex-col justify-center items-center`}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Map')} className={`flex flex-col justify-center items-center`}>
                     <MapIcon width={25} height={25} style={{color: props.section === 'Map' ? '#16a34a': '#6b7280'}}/>
                     <Text className={`font-[Inter-Bold] text-xs text-gray-500 ${props.section === 'Map' ? 'text-green-600' : ''}`}>Map</Text>
                 </TouchableOpacity>
