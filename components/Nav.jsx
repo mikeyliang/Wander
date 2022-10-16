@@ -18,12 +18,12 @@ export default function Nav(props) {
 
                 <TouchableOpacity className={`flex flex-col justify-center items-center`}>
                     <MapIcon width={25} height={25} style={{color: props.section === 'Map' ? '#16a34a': '#6b7280'}}/>
-                    <Text className="font-[Inter-Bold] text-xs text-gray-500">Map</Text>
+                    <Text className={`font-[Inter-Bold] text-xs text-gray-500 ${props.section === 'Map' ? 'text-green-600' : ''}`}>Map</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity onPress={() => props.navigation.navigate('Profile')} className={`flex flex-col justify-center items-center`}>
                     <UserIcon width={25} height={25} style={{color: props.section === 'Profile' ? '#16a34a': '#6b7280'}}/>
-                    <Text className="font-[Inter-Bold] text-xs text-gray-500">Profile</Text>
+                    <Text className={`font-[Inter-Bold] text-xs text-gray-500 ${props.section === 'Profile' ? 'text-green-600' : ''}`}>Profile</Text>
                 </TouchableOpacity>
 
             

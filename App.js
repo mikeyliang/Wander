@@ -8,8 +8,8 @@ import Nav from './components/Nav'
 import Home from './pages/Home';
 import Start from './screens/Start.jsx'
 import Login from './screens/Login.jsx'
-import Map from './pages/Map.jsx'
 import { useFonts } from 'expo-font';
+import Profile from './pages/Profile'
 
 const Stack = createNativeStackNavigator();
 
@@ -28,10 +28,10 @@ export default function App() {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
-        <Stack.Screen name="Map" component={Map} />
         <Stack.Screen name="Start" component={Start} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -30,18 +30,6 @@ export default function Login({navigation}) {
     const [collegeid, setCollegeid] = useState('ef8f0795-9036-4301-b56f-48995494fcfe')
     const [collegename, setcollegename] = useState('Cornell University')
 
-    const TryLogin = async (username, useremail, usercollegeid) => {
-        try {
-            const response = await axios.get(`http://localhost:3000/user/?email=${useremail.toLowerCase()}`)
-
-            const json = response.data
-
-            navigation.navigate('Home')
-            
-        } catch (error) {
-            console.log("Error could not push data")
-        }
-    }
 
     return(
 
@@ -112,7 +100,7 @@ export default function Login({navigation}) {
             <TextInput style={styles.input} placeholder="Email" onChangeText={text => setEmail(text)} className="mb-4"/>
 
 
-            <TouchableOpacity className="flex flex-row items-center rounded-2xl  py-4 mx-8 justify-center bg-[#3d7847]" onPress={ () => TryLogin(name, email, collegeid)}>
+            <TouchableOpacity className="flex flex-row items-center rounded-2xl  py-4 mx-8 justify-center bg-[#3d7847]" onPress={ () => navigation.navigate('Home')}>
                 <Text className="font-[Inter-Black] w-full text-center text-white ">Create Account</Text>
             </TouchableOpacity>
 
