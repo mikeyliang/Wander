@@ -5,10 +5,9 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Welcome from './screens/Welcome'
 import Nav from './components/Nav'
-
 import Home from './pages/Home';
-
 import Start from './screens/Start.jsx'
+import Login from './screens/Login.jsx'
 import { useFonts } from 'expo-font';
 
 const Stack = createNativeStackNavigator();
@@ -28,7 +27,9 @@ export default function App() {
       <Stack.Navigator screenOptions={{
         headerShown: false
       }}>
-        <Stack.Screen name="yes" component={Home} />
+        <Stack.Screen name="Start" component={Start} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

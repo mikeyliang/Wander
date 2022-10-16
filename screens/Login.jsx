@@ -13,10 +13,7 @@ const styles = StyleSheet.create({
     },
 });
 
-export default function Login(props) {
-
-
-
+export default function Login({navigation}) {
     return(
 
         <View className = "flex pt-16 flex-col justify-center gap-y-4 items-center w-full">
@@ -75,7 +72,7 @@ export default function Login(props) {
             <TextInput style={styles.input} placeholder="Email" />
 
 
-            <TouchableOpacity className="flex flex-row items-center Abg-gray-500 rounded-2xl pt-9 py-4 px-6 justify-center bg-slate-300">
+            <TouchableOpacity className="flex flex-row items-center Abg-gray-500 rounded-2xl pt-9 py-4 px-6 justify-center bg-slate-300" onPress={() => navigation.navigate('Home')}>
                 <Text className="font-[Inter-Black]">Create Account</Text>
             </TouchableOpacity>
 
