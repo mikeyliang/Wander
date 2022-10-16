@@ -6,8 +6,6 @@ import UserIcon from '../assets/icons/user-circle.svg'
 
 import Logo from '../assets/icons/logo.svg'
 
-import { useFonts } from 'expo-font';
-
 export default function Nav(props) {
 
     
