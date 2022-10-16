@@ -2,14 +2,29 @@
 import { View, Text, ScrollView } from "react-native";
 import Nav from "../components/Nav";
 
+import { useState } from "react";
+
 import TrailCard from "../components/TrailCard";
 
 import Logo from '../assets/icons/logo.svg'
 
 import SchoolIcon from '../assets/icons/school.svg'
 
+import axios from 'axios'
+import { useEffect } from "react";
+import ChallengeCard from "../components/ChallengeCard";
+
+
 export default function Home({navigation}) {
 
+    const [data, setData] = useState([])
+
+    useEffect(()=> {
+        fetch('http://localhost:3000/trail/?collegeid=ef8f0795-9036-4301-b56f-48995494fcfe')
+      .then((response) => response.json())
+      .then((json) => setData(json))
+
+    }, [])
 
     return (
 
@@ -34,13 +49,17 @@ export default function Home({navigation}) {
 
                 <Text className="w-full px-4 text-2xl font-extrabold text-gray-700">Recommended Sites</Text>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className="px-4 py-2 h-[100px]">
-                    <TrailCard />
-                    <TrailCard/>
+                    {data.map(function(trail) {
+        return (<TrailCard trail={trail.name} elevation={trail.elevationChange.toFixed(0)} imagepath = {trail.image} distance={trail.distance} difficulty={trail.difficulty}/>)
+    })
+    }
                 </ScrollView>
 
                 <Text className="w-full px-4 text-2xl font-extrabold text-gray-700">Challenges</Text>
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className="px-4 py-2 h-[0px]">
-                    <Text> hiiiii</Text>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className="px-8 py-4 h-[0px]">
+                    
+                    <ChallengeCard />
+
                 </ScrollView>
 
             </View>
