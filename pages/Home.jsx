@@ -23,12 +23,14 @@ export default function Home() {
             <View className="flex flex-row justify-between my-12 items-center w-full px-8">
                 <View className="flex flex-row gap-2 justify-center items-center">
                     <SchoolIcon width={20} height={20}/>
-                    <Text className="font-[Inter-] text-lg">Cornell University</Text>
+                    <Text className="font-semibold text-base">Cornell University</Text>
                 </View>
                 <View className="p-3 bg-white flex justify-center items-center rounded-full shadow-md">
                     <Logo width={20} height={20}/>
                 </View>
             </View>
+
+            <Text></Text>
             
             
     

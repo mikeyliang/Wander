@@ -19,7 +19,7 @@ export default function TrailCard() {
 
                 <View className="flex flex-row gap-2 justify-start items-end w-full pr-4">
                     <MapIcon height={25} width={25}></MapIcon>
-                    <Text className="text-end font-bold text-medium">Cascadilla Falls Trails</Text>
+                    <Text className="text-end font-semibold">Cascadilla Falls Trails</Text>
                 </View>
 
                 <View className="flex flex-row gap-2 mt-1 justify-evenly items-center">
