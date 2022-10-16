@@ -1,5 +1,5 @@
 
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import Nav from "../components/Nav";
 
 import TrailCard from "../components/TrailCard";
@@ -20,7 +20,7 @@ export default function Home() {
 
 
 
-            <View className="flex flex-row justify-between my-12 items-center w-full px-8">
+            <View className="flex flex-row justify-between mt-14 mb-6 items-center w-full px-8">
                 <View className="flex flex-row gap-2 justify-center items-center">
                     <SchoolIcon width={20} height={20}/>
                     <Text className="font-semibold text-base">Cornell University</Text>
@@ -30,11 +30,25 @@ export default function Home() {
                 </View>
             </View>
 
-            <Text></Text>
+            <View className="flex flex-col items-start justify-center">
+
+                <Text className="w-full px-4 text-2xl font-extrabold text-gray-700">Recommended Sites</Text>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className="px-4 py-2 h-[100px]">
+                    <TrailCard />
+                    <TrailCard/>
+                </ScrollView>
+
+                <Text className="w-full px-4 text-2xl font-extrabold text-gray-700">Challenges</Text>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className="px-4 py-2">
+                    <Text> hiiiii</Text>
+                </ScrollView>
+
+            </View>
+
+
             
             
     
-            <TrailCard/>
         </View>
         
     )
