@@ -8,8 +8,7 @@ import Nav from "../components/Nav";
 const LOCATION_TASK_NAME = "LOCATION_TASK_NAME"
 let foregroundSubscription = null
 
-
-export default function Map({navigation}) {
+export default function Map() {
   
   const [coordinate, setCoordinate] = useState([])
 
@@ -21,15 +20,16 @@ useEffect(() => {
 
 }, []);
   
+const GOOGLE_MAPS_APIKEY = 'AIzaSyDcNoanSoGSguOpq4hAIzaSyCxNyXMh_uKq0TXPpQ8fjb9oTb2XfB4gNMqmK84XaDIp70CxlM'
   
-  const GOOGLE_MAPS_APIKEY = 'AIzaSyCxNyXMh_uKq0TXPpQ8fjb9oTb2XfB4gNM'
+ 
       const Path = (origin, destination) => {
         return (
           <MapViewDirections 
-            origin = {origin}
-            destination = {destination}
+            origin = {{origin}}
+            destination = {{destination}}
             apikey = {GOOGLE_MAPS_APIKEY} 
-            strokeWidth = {1000}
+            strokeWidth = {10}
             strokeColor = "hotpink"/>
         )
       }
@@ -63,7 +63,10 @@ useEffect(() => {
   //   MapList.push(<Path origin={c[index]} destination={c[index+1]}></Path>)}
   // )})
     
-
+let MapList = []
+coordinate.forEach(function(c) {c.slice(0,-1).map((item, index) => {
+  MapList.push(<Path origin={c[index]} destination={c[index+1]}></Path>)}
+)})
     
    
   return(
@@ -83,17 +86,14 @@ useEffect(() => {
         showsUserLocation={true}>
 
       <MapViewDirections 
-            // origin = {origin}
-            // destination = {destination}
-            origin = {{latitude: 42.4441, longitude: -76.5020}}
-            destination = {{latitude: 43.4444, longitude: -76.5030}}
-            apikey = {GOOGLE_MAPS_APIKEY} 
-            strokeWidth = {10}
-            strokeColor = "red"/>
-          {/* {MapList} */}
-          {/* {coordinate.forEach(function(c) {c.slice(0,-1).map((item, index) => {
-            return (<Path origin={c[index]} destination={c[index+1]}></Path>)}
-          )})} */}
+            origin = {{latitude: 42.6444, longitude: -75.3425}}
+            destination = {{latitude: 44.6444, longitude: -70.3425}}
+          
+            
+            />
+          {MapList}
+           
+           
         </MapView>
     </View>
   )
