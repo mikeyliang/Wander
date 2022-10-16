@@ -2,14 +2,12 @@ import React, { useEffect, useState, Component } from "react"
 import { StyleSheet, View, Text, PROVIDER_GOOGLE } from "react-native";
 import MapView, { AnimatedRegion } from 'react-native-maps';
 
-import * as TaskManager from "expo-task-manager"
-import * as Location from "expo-location"
-
 const LOCATION_TASK_NAME = "LOCATION_TASK_NAME"
 let foregroundSubscription = null
 
 export default function Map() {
-    return(
+  
+  return(
     <View style={styles.container}>
         <MapView style={{height: '100%', width:'100%'}} initialRegion={{
             latitude: 42.4440,
@@ -25,7 +23,7 @@ export default function Map() {
         showsUserLocation={true}
         />
     </View>
-    );
+  );
 }
 
 
