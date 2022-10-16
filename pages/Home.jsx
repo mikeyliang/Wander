@@ -8,7 +8,7 @@ import Logo from '../assets/icons/logo.svg'
 
 import SchoolIcon from '../assets/icons/school.svg'
 
-export default function Home() {
+export default function Home({navigation}) {
 
 
     return (
@@ -16,7 +16,7 @@ export default function Home() {
         <View className="flex flex-col justify-start items-center h-full w-full">
             
 
-            <Nav />
+            <Nav section={"Home"} navigation={navigation}/>
 
 
 
@@ -39,7 +39,7 @@ export default function Home() {
                 </ScrollView>
 
                 <Text className="w-full px-4 text-2xl font-extrabold text-gray-700">Challenges</Text>
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className="px-4 py-2">
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} className="px-4 py-2 h-[0px]">
                     <Text> hiiiii</Text>
                 </ScrollView>
 

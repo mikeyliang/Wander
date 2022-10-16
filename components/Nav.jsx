@@ -7,12 +7,11 @@ import UserIcon from '../assets/icons/user-circle.svg'
 import Logo from '../assets/icons/logo.svg'
 
 export default function Nav(props) {
-
     
     return (
-        <View className="absolute bottom-0 bg-white w-full pb-6 pt-4 rounded-full">
+        <View className="absolute z-10 bottom-0 bg-white w-full pb-6 pt-4 rounded-full">
             <View className="flex flex-row justify-between px-12 items-center">
-                <TouchableOpacity className={`flex flex-col justify-center items-center`} style={{}}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Home')} className={`flex flex-col justify-center items-center`} style={{}}>
                     <HomeIcon width={25} height={25} style={{color: props.section === 'Home' ? '#16a34a': '#6b7280'}}/>
                     <Text className={`font-[Inter-Bold] text-xs text-gray-500 ${props.section === 'Home' ? 'text-green-600' : ''}`}>Home</Text>
                 </TouchableOpacity>
@@ -22,7 +21,7 @@ export default function Nav(props) {
                     <Text className="font-[Inter-Bold] text-xs text-gray-500">Map</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity className={`flex flex-col justify-center items-center`}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Profile')} className={`flex flex-col justify-center items-center`}>
                     <UserIcon width={25} height={25} style={{color: props.section === 'Profile' ? '#16a34a': '#6b7280'}}/>
                     <Text className="font-[Inter-Bold] text-xs text-gray-500">Profile</Text>
                 </TouchableOpacity>
